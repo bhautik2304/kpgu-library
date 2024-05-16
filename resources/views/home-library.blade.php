@@ -3,7 +3,7 @@
 
 @section('content')
     <!-- =======================
-                                                                                                                                                                                Main Banner START -->
+                                                                                                                                                                                            Main Banner START -->
     <section class="py-0">
         <div class="container-fluid">
             <div class="row">
@@ -39,10 +39,10 @@
         </div>
     </section>
     <!-- =======================
-                                                                                                                                                                                Main Banner END -->
+                                                                                                                                                                                            Main Banner END -->
 
     <!-- =======================
-                                                                                                                                                                                Special offer START -->
+                                                                                                                                                                                            Special offer START -->
     <section class="pb-0">
         <div class="container">
             <!-- Title -->
@@ -130,10 +130,10 @@
         </div>
     </section>
     <!-- =======================
-                                                                                                                                                                                Special offer END -->
+                                                                                                                                                                                            Special offer END -->
 
     <!-- =======================
-                                                                                                                                                                            Near by START -->
+                                                                                                                                                                                        Near by START -->
     <section>
         <div class="container">
             <!-- Title -->
@@ -168,7 +168,7 @@
         </div>
     </section>
     <!-- =======================
-                                                                                                                                                                            Near by END -->
+                                                                                                                                                                                        Near by END -->
 
     <section class="pt-0">
         <div class="container">
@@ -216,28 +216,27 @@
                             <!-- Card body START -->
                             <div class="card-body px-3">
                                 <!-- Title -->
-                                <h5 class="card-title mb-1"><a href="admin-booking-detail.html">Deluxe Pool View with
-                                        Breakfast</a></h5>
-                                <ul class="list-group list-group-borderless small mt-2 mb-0">
+                                <h5 class="card-title mb-1"><a href="#">{{ $book->name }}</a></h5>
+                                {{-- <ul class="list-group list-group-borderless small mt-2 mb-0">
                                     <li class="list-group-item pb-0">
                                         <i class="fa-solid fa-building fa-fw me-2"></i>Ground Floor: G5
                                     </li>
                                     <li class="list-group-item pb-0">
                                         <i class="fa-solid fa-bed fa-fw me-2"></i>Double Bed
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </div>
                             <!-- Card body END -->
 
                             <!-- Card footer START-->
                             <div class="card-footer pt-0">
                                 <!-- Price -->
-                                <div class="hstack gap-2 mb-2">
+                                {{-- <div class="hstack gap-2 mb-2">
                                     <h6 class="fw-normal mb-0">$1500</h6>
                                     <small>/per person</small>
                                 </div>
                                 <a href="admin-booking-detail.html" class="btn btn-sm btn-primary-soft mb-0 w-100">View
-                                    detail</a>
+                                    detail</a> --}}
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 
 @section('content')
     <!-- =======================
-                                                                                                Main Banner START -->
+                                                                                                                                                                                Main Banner START -->
     <section class="py-0">
         <div class="container-fluid">
             <div class="row">
@@ -13,7 +13,7 @@
                         <div class="tiny-slider-inner" data-gutter="0" data-arrow="true" data-dots="false" data-items="1">
                             <!-- Card item START -->
                             <div class="card overflow-hidden h-400px h-sm-600px rounded-0"
-                                style="background-image:url(students/assets/images/category/hotel/06.jpg); background-position: center left; background-size: cover;">
+                                style="background-image:url(/04-KPGU-Vadodara-Correct-scaled.jpg); background-position: center left; background-size: cover;">
                                 <!-- Background dark overlay -->
                                 <div class="bg-overlay bg-dark opacity-3"></div>
                                 <!-- Card image overlay -->
@@ -21,30 +21,10 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-11 col-lg-7">
-                                                <h6 class="text-white fw-normal mb-0">20/05/2024</h6>
+                                                {{-- <h6 class="text-white fw-normal mb-0">20/05/2024</h6> --}}
                                                 <!-- Title -->
-                                                <h1 class="text-white display-6">💖 Culturel Events</h1>
-                                                <a href="#" class="btn btn-primary mb-0">Know More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card item END -->
-
-                            <!-- Card item START -->
-                            <div class="card overflow-hidden h-400px h-sm-600px bg-parallax text-center rounded-0"
-                                data-jarallax-video="https://www.youtube.com/watch?v=j56YlCXuPFU">
-                                <!-- Background dark overlay -->
-                                <div class="bg-overlay bg-dark opacity-3"></div>
-                                <!-- Card image overlay -->
-                                <div class="card-img-overlay d-flex align-items-center">
-                                    <div class="container w-100 my-auto">
-                                        <div class="row justify-content-center">
-                                            <div class="col-11 col-lg-8">
-                                                <!-- Title -->
-                                                <h1 class="text-white">Ai Seminar Master Class</h1>
-                                                <a href="#" class="btn btn-dark mb-0">Register Now</a>
+                                                <h1 class="text-white display-6">KPGU Library</h1>
+                                                <a href="#" class="btn btn-primary mb-0">Register Now</a>
                                             </div>
                                         </div>
                                     </div>
@@ -59,10 +39,10 @@
         </div>
     </section>
     <!-- =======================
-                                                                                                Main Banner END -->
+                                                                                                                                                                                Main Banner END -->
 
     <!-- =======================
-                                                                                                Special offer START -->
+                                                                                                                                                                                Special offer START -->
     <section class="pb-0">
         <div class="container">
             <!-- Title -->
@@ -150,10 +130,10 @@
         </div>
     </section>
     <!-- =======================
-                                                                                                Special offer END -->
+                                                                                                                                                                                Special offer END -->
 
     <!-- =======================
-                                                                                            Near by START -->
+                                                                                                                                                                            Near by START -->
     <section>
         <div class="container">
             <!-- Title -->
@@ -188,7 +168,7 @@
         </div>
     </section>
     <!-- =======================
-                                                                                            Near by END -->
+                                                                                                                                                                            Near by END -->
 
     <section class="pt-0">
         <div class="container">
@@ -197,66 +177,68 @@
                     <h2 class="mb-0">Explore Books</h2>
                 </div>
             </div>
-            <div class="row g-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xxl-5 g-4">
                 @foreach (book::all() as $book)
                     <!-- Card item START -->
-                    <div class="col-md-6 col-xl-4">
-                        <div class="card shadow p-2 pb-0 h-100">
+                    <div class="col">
+                        <div class="card shadow h-100" style="width: 350px">
                             <!-- Overlay item -->
-                            <div class="position-absolute top-0 start-0 z-index-1 m-4">
-                                <div class="badge bg-danger text-white">30% Off</div>
-                            </div>
-
-                            <!-- Slider START -->
-                            <div class="tiny-slider arrow-round arrow-xs arrow-dark rounded-2 overflow-hidden">
-                                <div class="tiny-slider-inner" data-autoplay="false" data-arrow="true" data-dots="false"
-                                    data-items="1">
-                                    <!-- Image item -->
-                                    <div><img src="{{ asset('storage/' . $book->book_img_small) }}" alt="Card image">
+                            <div class="position-relative">
+                                <!-- Image -->
+                                <img src="{{ asset('storage/' . $book->book_img_small) }}" class="card-img-top"
+                                    style="height: 350px;width:350px" alt="Card image">
+                                <!-- Overlay -->
+                                <div class="card-img-overlay d-flex flex-column p-3">
+                                    <!-- Card overlay top -->
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="badge text-bg-dark"><i
+                                                class="bi fa-fw bi-star-fill me-2 text-warning"></i>4.5</div>
+                                        <!-- Buttons -->
+                                        <div class="list-inline-item dropdown">
+                                            <!-- Dropdown button -->
+                                            <a href="#" class="btn btn-sm btn-round btn-light" role="button"
+                                                id="dropdownAction1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-three-dots-vertical"></i>
+                                            </a>
+                                            <!-- dropdown items -->
+                                            <ul class="dropdown-menu dropdown-menu-end min-w-auto shadow rounded small"
+                                                aria-labelledby="dropdownAction1">
+                                                <li><a class="dropdown-item" href="#"><i
+                                                            class="bi bi-info-circle me-2"></i>Report</a></li>
+                                                <li><a class="dropdown-item" href="#"><i
+                                                            class="bi bi-slash-circle me-2"></i>Disable</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Slider END -->
 
                             <!-- Card body START -->
-                            <div class="card-body px-3 pb-0">
-                                <!-- Rating and cart -->
-                                <div class="d-flex justify-content-between mb-3">
-                                    <a href="#" class="badge bg-dark text-white"><i
-                                            class="bi fa-fw bi-star-fill me-2 text-warning"></i>4.5</a>
-                                    <a href="#" class="h6 mb-0 z-index-2"><i class="bi fa-fw bi-bookmark"></i></a>
-                                </div>
-
+                            <div class="card-body px-3">
                                 <!-- Title -->
-                                <h5 class="card-title"><a href="hotel-detail.html">{{ $book->name }}</a></h5>
-
-                                {{-- <!-- List -->
-                                <ul class="nav nav-divider mb-2 mb-sm-3">
-                                    <li class="nav-item">Air Conditioning</li>
-                                    <li class="nav-item">Wifi</li>
-                                    <li class="nav-item">Kitchen</li>
-                                    <li class="nav-item">Pool</li>
-                                </ul> --}}
+                                <h5 class="card-title mb-1"><a href="admin-booking-detail.html">Deluxe Pool View with
+                                        Breakfast</a></h5>
+                                <ul class="list-group list-group-borderless small mt-2 mb-0">
+                                    <li class="list-group-item pb-0">
+                                        <i class="fa-solid fa-building fa-fw me-2"></i>Ground Floor: G5
+                                    </li>
+                                    <li class="list-group-item pb-0">
+                                        <i class="fa-solid fa-bed fa-fw me-2"></i>Double Bed
+                                    </li>
+                                </ul>
                             </div>
                             <!-- Card body END -->
 
                             <!-- Card footer START-->
-                            {{-- <div class="card-footer pt-0">
-                                <!-- Price and Button -->
-                                <div class="d-sm-flex justify-content-sm-between align-items-center">
-                                    <!-- Price -->
-                                    <div class="d-flex align-items-center">
-                                        <h5 class="fw-normal text-success mb-0 me-1">$750</h5>
-                                        <span class="mb-0 me-2">/day</span>
-                                        <span class="text-decoration-line-through">$1000</span>
-                                    </div>
-                                    <!-- Button -->
-                                    <div class="mt-2 mt-sm-0">
-                                        <a href="hotel-detail.html" class="btn btn-sm btn-primary-soft mb-0 w-100">View
-                                            Detail<i class="bi bi-arrow-right ms-2"></i></a>
-                                    </div>
+                            <div class="card-footer pt-0">
+                                <!-- Price -->
+                                <div class="hstack gap-2 mb-2">
+                                    <h6 class="fw-normal mb-0">$1500</h6>
+                                    <small>/per person</small>
                                 </div>
-                            </div> --}}
+                                <a href="admin-booking-detail.html" class="btn btn-sm btn-primary-soft mb-0 w-100">View
+                                    detail</a>
+                            </div>
                         </div>
                     </div>
                     <!-- Card item END -->

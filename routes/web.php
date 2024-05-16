@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{adminPageController, authController, studentPageController};
+use App\Http\Controllers\{adminPageController, authController, StudentController, studentPageController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [studentPageController::class, 'home']);
+Route::get('/', [studentPageController::class, 'home'])->name('home');
 
-Route::get('student/login', [studentPageController::class, '']);
+Route::get('student/login', [studentPageController::class, 'login'])->name('studentlogin');
+Route::post('student/login', [authController::class, 'studentLogin'])->name('studentLogdin');
+Route::get('student/logout', [authController::class, 'studentlogout'])->name('studentLogout');
 
+Route::get('student/register', [studentPageController::class, 'register'])->name('studentregister');
+Route::post('student/register', [StudentController::class, 'registerStudent'])->name('studentRegister');
 /*
 |--------------------------------------------------------------------------
 | Library Admin Routes

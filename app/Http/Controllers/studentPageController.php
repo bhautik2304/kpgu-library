@@ -12,4 +12,13 @@ class studentPageController extends Controller
     {
         return view('home-library');
     }
+
+    public function login()
+    {
+        return view('auth.students.login');
+    }
+    public function register()
+    {
+        return view('auth.students.register');
+    }
 }

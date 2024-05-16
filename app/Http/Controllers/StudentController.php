@@ -30,7 +30,6 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
-        // Validate the request data
         $request->validate([
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'name' => 'required|string|max:255',
@@ -44,20 +43,19 @@ class StudentController extends Controller
             'semester' => 'nullable|string|max:255',
         ]);
 
-        // Handle file upload
+
         if ($request->hasFile('avatar')) {
             $avatarPath = $request->file('avatar')->store('avatars', 'public');
         } else {
             $avatarPath = null;
         }
 
-        // Create the student record
         student::create([
             'avatar' => $avatarPath,
             'name' => $request->name,
             'number' => $request->number,
             'email' => $request->email,
-            'password' => Hash::make($request->number),
+            'password' => Hash::make($request->password),
             'gender' => $request->gender,
             'approvel' => $request->approvel,
             'address' => $request->address,
@@ -66,8 +64,34 @@ class StudentController extends Controller
             'semester' => $request->semester,
         ]);
 
-        // Redirect or respond with a success message
+
         return redirect()->route('student_list')->with('success', 'student registered successfully.');
+    }
+    public function registerStudent(Request $request)
+    {
+        //
+
+        if ($request->hasFile('avatar')) {
+            $avatarPath = $request->file('avatar')->store('avatars', 'public');
+        } else {
+            $avatarPath = null;
+        }
+
+        student::create([
+            'avatar' => $avatarPath,
+            'name' => $request->name,
+            'number' => $request->number,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'gender' => $request->gender,
+            'approvel' => false,
+            'address' => $request->address,
+            'academic' => $request->academic,
+            'program' => $request->program,
+            'semester' => $request->semester,
+        ]);
+
+        return redirect()->route('studentlogin')->with('success', 'student registered successfully.');
     }
 
     /**
@@ -92,7 +116,6 @@ class StudentController extends Controller
     public function update(Request $request, student $student, $id)
     {
         //
-        // Validate the request data
         $request->validate([
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'name' => 'required|string|max:255',
@@ -105,10 +128,6 @@ class StudentController extends Controller
             'program' => 'nullable|string|max:255',
             'semester' => 'nullable|string|max:255',
         ]);
-
-        // Handle file upload
-
-        // Update the student record
         $student->find($id)->update([
             'name' => $request->name,
             'number' => $request->number,
